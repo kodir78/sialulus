@@ -157,8 +157,8 @@ class GraduateController extends Controller
         {
             $messages = [
                 'required' => ':Tidak boleh kosong!!!',
-                'min' => ':min 23 karakter, sesuai no peserta !!!',
-                'max' => ':max 23 karakter, sesuai no peserta!!!',
+                'min' => ':attribute harus diisi minimal : 23 karakter, sesuai no peserta !!!',
+                'max' => ':attribute harus diisi maksimal: 23 karakter, sesuai no peserta!!!',
             ];
             
             $this->validate($request,[
