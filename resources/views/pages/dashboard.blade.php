@@ -99,8 +99,8 @@
               <h5 class="card-title m-0">Informasi Kelulusan</h5>
             </div>
             <div class="card-body">
-              <p class="card-text"><strong>Silahkan ketik nomor Peserta Anda </strong>
-                <p><strong>Contoh : 2-20-16-01-00001-xxxx-x</strong> </p>
+              <p class="card-text"><strong>Silahkan ketik nomor Peserta UNBK </strong>
+                <p><strong>Contoh : P160100010xxxx</strong> </p>
                 <div class="form-group">
                   <form action="{{ route('graduates.search') }}">
                     <div class="input-group input-group-sm" >

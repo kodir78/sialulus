@@ -25,6 +25,7 @@ class GraduateImport implements ToModel, WithHeadingRow // USE CLASS YANG DIIMPO
             'kls' => $row['kls'],
             'name' => $row['nama'],
             'slug' => Str::slug($row['nama']),
+            'jeniskelamin' => $row['jeniskelamin'],
             'ttl' => $row['ttl'],
             'name_ortu' => $row['nama_ortu'],
             'nopes_skl' => $row['nopes_skl'],

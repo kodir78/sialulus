@@ -120,11 +120,11 @@ class GraduateController extends Controller
                 
                 $nama_file = rand().$file->getClientOriginalName();  // membuat nama file unik
                 
-                $file->move('file_product',$nama_file); // upload ke folder file_product di dalam folder public
+                $file->move('file_upload',$nama_file); // upload ke folder file_upload di dalam folder public
                 
-                Excel::import(new GraduateImport, public_path('/file_product/'.$nama_file)); // import data
+                Excel::import(new GraduateImport, public_path('/file_upload/'.$nama_file)); // import data
                 
-                unlink(public_path('/file_product/'.$nama_file)); //MENGHAPUS FILE EXCEL YANG TELAH DI-UPLOAD
+                unlink(public_path('/file_upload/'.$nama_file)); //MENGHAPUS FILE EXCEL YANG TELAH DI-UPLOAD
                 
                 // notifikasi dengan session
                 Session::flash('success','Data Kelulusan Berhasil Diimport!');
@@ -157,21 +157,21 @@ class GraduateController extends Controller
         {
             $messages = [
                 'required' => ':Tidak boleh kosong!!!',
-                'min' => ':attribute harus diisi minimal : 23 karakter, sesuai no peserta !!!',
-                'max' => ':attribute harus diisi maksimal: 23 karakter, sesuai no peserta!!!',
+                'min' => ':attribute harus diisi minimal : 14 karakter, sesuai no peserta !!!',
+                'max' => ':attribute harus diisi maksimal: 14 karakter, sesuai no peserta!!!',
             ];
             
             $this->validate($request,[
-                'term' => 'required|min:23|max:23',
+                'term' => 'required|min:14|max:14',
             ],$messages);
 
             $term = $request->term;
-            if ($item = DB::table('graduates')->where('nopes_skl', $term)->first()) {
+            if ($item = DB::table('graduates')->where('nopesubk', $term)->first()) {
                 return view('pages.graduates.search', compact('item'));
             }
             
-            Session::flash('error','Nomor peserta tidak sesuai'); 
-           return redirect()->back();
+            Session::flash('error','Nomor peserta UNBK tidak sesuai'); 
+            return redirect()->back();
            
         }
 }

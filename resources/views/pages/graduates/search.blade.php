@@ -43,6 +43,9 @@
                             
                             <ul class="list-group list-group-unbordered mb-3">
                                 <li class="list-group-item">
+                                    <b>Jenis Kelamin</b> <a class="float-right">{{ $item->jeniskelamin }}</a> 
+                                </li>
+                                <li class="list-group-item">
                                     <b>Kelas</b> <a class="float-right">{{ $item->kls }}</a> 
                                 </li>
                                 <li class="list-group-item">
@@ -213,9 +216,9 @@
                                     </tr>
                                     <tr class="font-weight-bold">
                                         <td colspan="2" class="text-center">Rata-Rata</td>
-                                        <td class="text-center">{{ $item->r_rata }}</td>
-                                        <td class="text-center">{{ $item->nus_rata }}</td>
-                                        <td class="text-center">{{ number_format($item->nas_rata,1) }}</td>
+                                        <td class="text-center">{{ number_format($item->r_rata,2) }}</td>
+                                        <td class="text-center">{{ number_format($item->nus_rata,2) }}</td>
+                                        <td class="text-center">{{ number_format($item->nas_rata,2) }}</td>
                                     </tr>
                                 </tbody>
                             </table>
